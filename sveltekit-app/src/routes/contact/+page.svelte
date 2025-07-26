@@ -1,0 +1,21 @@
+<svelte:head>
+  <title>Contact - Pro Empo Consults</title>
+</svelte:head>
+<section class="p-6 max-w-3xl mx-auto">
+  <h2 class="text-3xl font-semibold mb-4">Get in Touch</h2>
+  <form class="space-y-4">
+    <div>
+      <label class="block mb-1">Name</label>
+      <input type="text" class="w-full p-2 border rounded" placeholder="Your Name" />
+    </div>
+    <div>
+      <label class="block mb-1">Email</label>
+      <input type="email" class="w-full p-2 border rounded" placeholder="Your Email" />
+    </div>
+    <div>
+      <label class="block mb-1">Message</label>
+      <textarea class="w-full p-2 border rounded" rows="4" placeholder="Your Message"></textarea>
+    </div>
+    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded">Send</button>
+  </form>
+</section>

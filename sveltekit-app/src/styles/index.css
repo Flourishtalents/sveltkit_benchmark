@@ -1,0 +1,177 @@
+
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap');
+
+/* Pull in Tailwind v4 engine and core utilities */
+@import "tailwindcss";
+
+/* Define design system tokens using Tailwind v4 @theme syntax */
+@theme {
+  /* Core Colors */
+  --color-background: #ffffff;
+  --color-foreground: #1f2937;
+  --color-border: #e5e7eb;
+  --color-input: #ffffff;
+  --color-ring: #3b82f6;
+
+  /* Card Colors */
+  --color-card: #ffffff;
+  --color-card-foreground: #1f2937;
+
+  /* Popover Colors */
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1f2937;
+
+  /* Muted Colors */
+  --color-muted: #f8fafc;
+  --color-muted-foreground: #6b7280;
+
+  /* Primary Colors */
+  --color-primary: #1e3a8a;
+  --color-primary-foreground: #ffffff;
+
+  /* Secondary Colors */
+  --color-secondary: #3b82f6;
+  --color-secondary-foreground: #ffffff;
+
+  /* Accent Colors */
+  --color-accent: #f59e0b;
+  --color-accent-foreground: #1f2937;
+
+  /* Success / Warning / Error */
+  --color-success: #10b981;
+  --color-success-foreground: #ffffff;
+  --color-warning: #f59e0b;
+  --color-warning-foreground: #1f2937;
+  --color-error: #ef4444;
+  --color-error-foreground: #ffffff;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+  /* Surface Colors */
+  --color-surface: #f8fafc;
+  --color-surface-foreground: #1f2937;
+
+  /* Text Colors */
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+
+  /* Border Radius */
+  --radius: 0.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Tailwind base reset and core layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  body, p, span, div {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .font-accent {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-cta {
+    @apply bg-accent text-accent-foreground font-bold py-3 px-6 rounded-lg transition-all duration-250 ease-in-out;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-cta:hover {
+    @apply transform -translate-y-0.5;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card-testimonial {
+    @apply bg-card text-card-foreground p-6 rounded-lg border border-border;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .form-field-active {
+    @apply border-2 border-accent ring-2;
+  }
+
+  .section-surface {
+    @apply bg-surface;
+  }
+
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  .transition-standard {
+    transition: all 250ms ease-in-out;
+  }
+}
+
+@layer utilities {
+  .animation-reveal {
+    animation: reveal 300ms ease-out;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .shadow-cta {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-testimonial {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .z-navigation {
+    z-index: 100;
+  }
+
+  .z-floating {
+    z-index: 90;
+  }
+
+  .z-contact {
+    z-index: 95;
+  }
+}
